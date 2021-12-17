@@ -1,6 +1,6 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "./actions";
+import { increment, decrement } from "./actions";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -12,12 +12,18 @@ function App() {
       <h1>Counter: {counter}</h1>
       <button
         onClick={() => {
-          dispatch(increment());
+          dispatch(increment(2));
         }}
       >
         +
       </button>
-      <button>-</button>
+      <button
+        onClick={() => {
+          dispatch(decrement(5));
+        }}
+      >
+        -
+      </button>
       {isLogged ? <h3>Sensible information I shouldn't see</h3> : ""}
     </div>
   );
