@@ -19,6 +19,9 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+console.log(store);
+console.log(store.getState());
+
 //Notar que toda nuestra App debe estar wrappeada por el Provider. El Provider solo llevar un custom attribute que sería: store={store}
 ReactDOM.render(
   <Provider store={store}>
